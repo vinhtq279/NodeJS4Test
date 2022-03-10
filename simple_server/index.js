@@ -1,4 +1,4 @@
-const port = 65503, 
+const port = 65502, 
 	http = require("http"), 
 	httpStatus = require("http-status-codes"), 
 	app = http.createServer((request, response) => {
@@ -25,5 +25,4 @@ app.on("request", (req, res) => {
 	req.on("data", (bodyData) => {
 		body.push(bodyData);
 	});
-
-}
+});
