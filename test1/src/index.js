@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import Clock from './components/Clock';
 import Test from './components/Test';
+import NumberList from './components/NumberList';
 import reportWebVitals from './reportWebVitals';
 
+const numbers = [1, 2, 3, 4, 5];
 
 ReactDOM.render(
   <React.StrictMode>
-    <Test />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
