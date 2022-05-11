@@ -1,13 +1,13 @@
 var express = require('express');
 var app = new express();
 var MongoClient = require('mongodb').MongoClient;
-MongoClient.connect("mongodb://172.24.104.83:27017/test",(err, db) => {
+MongoClient.connect("mongodb://172.24.104.83:27017",(err, client) => {
     if(err) throw err;
-    db.collection('student', (err, collection) => {
-        collection.find().toArray((err, items) => {
-            if(err) throw err;
-            console.log(items)
-        })
+    db = client.db('test');
+    db.collection('student').find().toArray((err, items) => {
+        if(err) throw err;
+        console.log(items);
+        client.close();
     })
 });
 
